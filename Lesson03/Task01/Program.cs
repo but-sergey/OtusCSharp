@@ -12,7 +12,9 @@ namespace Task01
         {
             A a = new A(), b = new B(), c = new C();
             I ia = new A(), ib = new B(), ic = new C();
+            A ac = new C(); B bc = new B();
             Console.WriteLine($"{a.P}, {b.P}, {c.P}, {ia.P}, {ib.P}, {ic.P}");
+            Console.WriteLine($"{ac.P}, {bc.P}");
         }
 
         interface I
