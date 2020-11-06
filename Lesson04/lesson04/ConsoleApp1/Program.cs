@@ -9,7 +9,7 @@ namespace ConsoleApp1
 
     interface ISample2
     {
-        void SampleMethod2();
+        void SampleMethod();
     }
 
     class Foo : ISample
@@ -22,12 +22,12 @@ namespace ConsoleApp1
 
     class Foo2:ISample, ISample2
     {
-        public void SampleMethod()
+        /*public*/ void ISample.SampleMethod()
         {
             Console.WriteLine("Вызван метод");
         }
 
-        public void SampleMethod2()
+        /*public*/ void ISample2.SampleMethod()
         {
             Console.WriteLine("Вызван метод 2");
         }
@@ -47,7 +47,9 @@ namespace ConsoleApp1
             sample.SampleMethod();
 
             ISample2 sample2 = foo2;
-            sample2.SampleMethod2();
+            sample2.SampleMethod();
+
+            Console.ReadLine();
         }
     }
 }
